@@ -7,6 +7,7 @@ module "module_test" {
   size                  = 10
   zone                  = 1
   lun                   = 10
+  attach                = true
   tags = {
     "test" = "test"
   }
