@@ -63,3 +63,27 @@ variable "zone" {
   type        = number
   default     = null
 }
+
+variable "virtual_machine_id" {
+  description = "(Optional) Specifies the ID of the Virtual Machine that this disk will be attached to. Changing this forces a new resource to be created."
+  type        = string
+  default     = null
+}
+
+variable "caching" {
+  description = "(Optional) Specifies the caching requirements. Possible values are None, ReadOnly and ReadWrite. Changing this forces a new resource to be created."
+  type        = string
+  default     = null
+}
+
+variable "lun" {
+  description = "(Optional) Specifies the Logical Unit Number for the disk. Changing this forces a new resource to be created."
+  type        = number
+  default     = null
+}
+
+variable "write_accelerator" {
+  description = "(Optional) Specifies whether writeAccelerator should be enabled or disabled on the disk. Changing this forces a new resource to be created."
+  type        = bool
+  default     = null
+}

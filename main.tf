@@ -27,7 +27,7 @@ data "azurerm_resource_group" "resource_group" {
 # Disk Configuration
 #------------------------------------------------------------------------------------------
 
-resource "azurerm_managed_disk" "example" {
+resource "azurerm_managed_disk" "disk" {
   name                 = var.name
   location             = var.location_name
   resource_group_name  = var.resource_group_name
@@ -73,12 +73,14 @@ resource "azurerm_managed_disk" "example" {
 # tier
 # trusted_launch_enabled
 # upload_size_bytes
-# zone
 
 
-# resource "azurerm_virtual_machine_data_disk_attachment" "example" {
-#   managed_disk_id    = azurerm_managed_disk.example.id
-#   virtual_machine_id = azurerm_virtual_machine.example.id
-#   lun                = "10"
-#   caching            = "ReadWrite"
-# }
+resource "azurerm_virtual_machine_data_disk_attachment" "disk_attach" {
+  count                     = var.virtual_machine_id == null ? 0 : 1
+  managed_disk_id           = azurerm_managed_disk.disk.id
+  virtual_machine_id        = var.virtual_machine_id
+  lun                       = var.lun
+  caching                   = var.caching == null ? "None" : var.caching
+  create_option             = var.create_option == null ? "Attach" : var.create_option
+  write_accelerator_enabled = azurerm_managed_disk.disk.storage_account_type == "Premium_LRS" ? var.write_accelerator : null
+}
