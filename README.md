@@ -14,13 +14,13 @@ Aquí está la lista de parámetros totales para su referencia:
 module "module_test" {
   source                = "../../terraform-azurerm-azure_disk"
   create_resource_group = false
-  resource_group_name   = "RG-VPN"
+  resource_group_name   = "test-rg"
   location_name         = "eastus"
   name                  = "test-disk"
   size                  = 10
   zone                  = 1
   lun                   = 10
-  storage_type         = "PremiumV2_LRS"
+  attach                = true
   tags = {
     "test" = "test"
   }
