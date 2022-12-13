@@ -77,7 +77,7 @@ variable "caching" {
 }
 
 variable "lun" {
-  description = "(Optional) Specifies the Logical Unit Number for the disk. Changing this forces a new resource to be created."
+  description = "Specifies the Logical Unit Number for the disk. Changing this forces a new resource to be created."
   type        = number
   default     = null
 }
