@@ -35,6 +35,7 @@ resource "azurerm_managed_disk" "example" {
   create_option        = local._create
   disk_size_gb         = var.size
   tags                 = var.tags
+  zone                 = var.zone
 }
 
 #-----------------------------------------------
@@ -69,8 +70,6 @@ resource "azurerm_managed_disk" "example" {
 # source_resource_id
 # source_uri
 # storage_account_id
-# storage_account_type
-# tags
 # tier
 # trusted_launch_enabled
 # upload_size_bytes
