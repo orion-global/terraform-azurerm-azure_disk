@@ -1,25 +1,12 @@
-# Repositorio plantilla para la creación de nuevos módulos de Terraform
-Este repositorio tiene como finalidad, guiar en el proceso de creación de un nuevo módulo de Terraform, brindando indicaciones así como la estructura de archivos y carpetas que se deben contener para una correcta conexión y funcionalidad.
+# Módulo para la creación de Discos administrados en Azure
+Este módulo crea un disco administrado en Azure y da la posibilidad de atacharlo a una VM existente. Los recursos a emplear son: 
+* [azurerm_managed_disk](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/managed_disk)
+* [azurerm_virtual_machine_data_disk_attachment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_data_disk_attachment)
 
-## Uso e instalación
-Para la instalación deberá conectarse el repositorio con el registro privado de la organización de Terraform Cloud. Para ello deberá tenerse las siguientes consideraciones:
-* Usar esta plantilla para la estructura de archivos
-  * El repositorio en si mismo es el módulo.
-  * En caso emplee submódulos, estos ebdeberán cargarse en la carpeta submodules y cada uno contará con sus respectivos ejemplos.
-* Eliminar toda la información de guía desde la línea separadora hacia arriba, lo podrá identificar con el comentario "INICIO DE PLANTILLA DE DOCUMENTACIÓN" en el contenido del archivo Markdown.
-* El repositorio deberá tener la siguiente estructura en el nombre:
-  * terraform-_proveedor_-_nombre que se le dará al módulo sin guiones_
-* Para que sea funcional, deberá generar un nuevo _release_ usando _tags_ en Github
-  * Use [versiones de tipo semántica](https://semver.org/), por ejemplo: v1.0.0
-  * Para ello, ir a la página de _releases_ del repositorio ubicado en "/releases/new" y crear un nuevo _tag_
-    * Para nuevas versiones, siga la secuencia lógica de las versiones, por ejemplo: v1.0.0 > v1.0.1
-    * En el campo de título, el nombre del tag, por ejemplo: v1.0.0
-    * En el campo de descripción, indique los detalles de la nueva versión y los cambios efectuados.
+Aquí está la lista de parámetros totales para su referencia:
+* https://github.com/hashicorp/terraform-provider-azurerm/blob/main/website/docs/r/managed_disk.html.markdown
+* https://github.com/hashicorp/terraform-provider-azurerm/blob/main/website/docs/r/virtual_machine_data_disk_attachment.html.markdown
 
-<!-- INICIO DE PLANTILLA DE DOCUMENTACIÓN -->
-
-# _Insertar el nombre del módulo_
-Agregar breve descripción del módulo y los recursos que creará.
 
 ## Usage
 
